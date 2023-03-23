@@ -13,7 +13,6 @@ export default function Main(props) {
 
     useEffect(() => {
         axios.get("https://api.nasa.gov/planetary/apod?api_key=NSaOZABJTnQguj6ZeyS8doPy9jCD0cwGQPtZhP9y").then((response) => {
-            console.log(response)
             setData(response.data.explanation)
             setHead(response.data.title)
             setImage(response.data.url)

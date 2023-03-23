@@ -11,7 +11,7 @@ export default function Register(props) {
             email: e.target[1].value,
             password: e.target[2].value
         }
-        axios.post("http://localhost:1808/user/register", payload).then((response) => {
+        axios.post(`${process.env.REACT_APP_SERVER}/user/register`, payload).then((response) => {
             if (response.data.status == "fault") {
                 window.alert(response.data.message)
             }

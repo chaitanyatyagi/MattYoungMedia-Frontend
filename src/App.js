@@ -17,9 +17,10 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState({})
 
-  const getUser = async () => {
-    await axios.get(`${process.env.REACT_APP_SERVER}/auth/login/success`, { withCredentials: true }).then((response) => {
+  const getUser = () => {
+    axios.get(`${process.env.REACT_APP_SERVER}/auth/login/success`, { withCredentials: true }).then((response) => {
       setUser(response.data.user)
+      console.log(user)
     }).catch((error) => {
       console.log(error)
     })
