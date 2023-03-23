@@ -10,8 +10,14 @@ export default function ForgotPassword(props) {
             email: e.target[0].value
         }
         axios.post(`${process.env.REACT_APP_SERVER}/user/forgot-password`, payload).then((response) => {
-            window.alert("Reset Password link has been sent to this mail !")
-            window.open("/", "_self")
+            console.log(response)
+            if (response.data.status == "fault") {
+                window.alert(response.data.message)
+            }
+            else {
+                window.alert("Email has been sent to the registered mail.")
+                window.open("/", "_self")
+            }
         }).catch((error) => {
             console.log(error)
         })

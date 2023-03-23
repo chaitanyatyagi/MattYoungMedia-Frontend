@@ -14,8 +14,13 @@ export default function ResetPassword(props) {
             password: e.target[0].value
         }
         axios.post(`${process.env.REACT_APP_SERVER}/user/reset-password/${name}`, payload).then((response) => {
-            window.alert("Password has been reset !")
-            window.open("/", "_self")
+            if (response.data.status == "fault") {
+                window.alert(response.data.message)
+            }
+            else {
+                window.alert(response.data.message)
+                window.open("/", "_self")
+            }
         }).catch((error) => {
             console.log(error)
         })
