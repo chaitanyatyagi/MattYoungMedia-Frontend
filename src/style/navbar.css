@@ -1,0 +1,80 @@
+.navbar {
+    height: 8vh;
+    width: 100vw;
+    display: flex;
+    background-color: transparent;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    width: 15%;
+    height: 80%;
+    background-image: url("../images/logo.webp");
+    background-size: 100% 100%;
+    background-position: center;
+    margin-left: 18px;
+    background-color: white;
+}
+
+.navbar-register {
+    cursor: pointer;
+    width: 10%;
+    height: 50%;
+    border: 2px solid white;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 18px;
+    text-decoration: none;
+}
+
+@media(max-width:800px) {
+    .navbar-register {
+        width: 18%;
+    }
+
+    .navbar-logo {
+        width: 12%;
+        height: 75%;
+    }
+}
+
+@media(max-width:600px) {
+    .navbar-register {
+        width: 22%;
+        font-size: 1.2rem;
+        font-weight: 450;
+    }
+
+    .navbar-logo {
+        width: 20%;
+        height: 60%;
+    }
+}
+
+@media(max-width:400px) {
+    .navbar-register {
+        width: 30%;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .navbar-logo {
+        width: 25%;
+    }
+}
+
+@media(max-width:200px) {
+    .navbar-register {
+        width: 35%;
+        font-size: 0.8rem;
+        font-weight: 300;
+    }
+
+    .navbar-logo {
+        width: 35%;
+    }
+}
