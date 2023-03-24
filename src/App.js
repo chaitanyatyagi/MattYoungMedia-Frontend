@@ -19,8 +19,8 @@ function App() {
 
   const getUser = () => {
     axios.get(`${process.env.REACT_APP_SERVER}/auth/login/success`, { withCredentials: true }).then((response) => {
+      console.log(response.data)
       setUser(response.data.user)
-      console.log(user)
     }).catch((error) => {
       console.log(error)
     })
